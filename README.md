@@ -4,7 +4,7 @@
 
 An agent-based model (ABM) implementation for studying farmer adaptation strategies in water management systems. UPWAS (Upscaling Water Storage) integrates hydrological modeling with behavioral decision-making to simulate agricultural water storage decisions under different climate scenarios.
 
-## 🔬 Overview
+## Overview
 
 The UPWAS ABM couples the [WALRUS hydrological model](walrus_abm_version.py) with farmer agents that make adaptive decisions about water storage measures (weirs and reduced channel depth) based on Protection Motivation Theory (PMT). The model simulates socio-hydrological dynamics across agricultural landscapes under various climate conditions.
 
@@ -15,11 +15,11 @@ The UPWAS ABM couples the [WALRUS hydrological model](walrus_abm_version.py) wit
 - **Climate Scenarios**: Support for historical and future climate projections
 
 ## 📁 Repository Structure
-upwas_model.py # Main ABM model implementation
-upwas_agents.py # Farmer agent definitions 
-upwas_scenarios.py # Scenario configurations 
-walrus_abm_version.py # WALRUS hydrological model integration 
-upwas_run.py # Single scenario execution 
+(upwas_model.py) # Main ABM model implementation
+(upwas_agents.py) # Farmer agent definitions 
+(upwas_scenarios.py) # Scenario configurations 
+(walrus_abm_version.py) # WALRUS hydrological model integration 
+(upwas_run.py) # Single scenario execution 
 data/ # Input data directory 
 climate/ # Climate forcing data 
 dem/ # Digital elevation models 
