@@ -1,20 +1,20 @@
 # upwas-abm
 
-# UPWAS ABM: Agent-Based Model for Water Storage Adaptation
+# Agent-Based Model for drought adaptive behaviour 
 
-An agent-based model (ABM) implementation for studying farmer adaptation strategies in water management systems. UPWAS (Upscaling Water Storage) integrates hydrological modeling with behavioral decision-making to simulate agricultural water storage decisions under different climate scenarios.
+An agent-based model (ABM) implementation for studying farmer adaptation strategies in water management systems. The model integrates hydrological modeling with behavioral decision-making to simulate agricultural adaptation decisions under different climate scenarios.
 
 ## Overview
 
-The UPWAS ABM couples the [WALRUS hydrological model](walrus_abm_version.py) with farmer agents that make adaptive decisions about water storage measures (weirs and reduced channel depth) based on Protection Motivation Theory (PMT). The model simulates socio-hydrological dynamics across agricultural landscapes under various climate conditions.
+The ABM couples the [WALRUS hydrological model](walrus_abm_version.py) with farmer agents that make adaptive decisions about drought adaptation measures (weirs and reduced channel depth) based on Protection Motivation Theory (PMT). The model simulates socio-hydrological dynamics across agricultural landscapes under various climate conditions.
 
 ### Key Features
 
 - **Hydrological Modeling**: Integration with WALRUS for realistic water dynamics
-- **Behavioral Modeling**: Agent decision-making based on Protection Motivation Theory
+- **Behavioural Modeling**: Agent decision-making based on Protection Motivation Theory
 - **Climate Scenarios**: Support for historical and future climate projections
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ├── upwas_model.py               # Main ABM model implementation
@@ -39,3 +39,5 @@ The UPWAS ABM couples the [WALRUS hydrological model](walrus_abm_version.py) wit
 - `static_dry_future`: Static scenario with dry climate conditions
 - `static_wet_future`: Static scenario with wet climate conditions
 
+### Funding
+This research is part of the project ‘Upscaling private and collective water storage for robust agricultural systems: Potentials, possibilities and challenges’ (UPWAS; project number KICH1.LWV02.20.006) of the research programme ‘Climate-robust production systems and water management’ (KIC) which is financed by the Dutch Research Council (NWO).
