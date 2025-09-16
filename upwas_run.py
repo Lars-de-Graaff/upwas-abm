@@ -7,7 +7,18 @@ import os
 import upwas_model as upwas
 import upwas_scenarios
 
-scenario = upwas_scenarios.test_fast #None # upwas_scenarios.{scenario_name} (Global variable to hold the scenario configuration)
+scenario = None # upwas_scenarios.{scenario_name} # scenarios: 
+# avalable scenarios:
+#   validation: Validation run
+#   measure_only_weirs: scenario with a static number of weirs installed, no reduced channels
+#   measure_only_reduced_channels: scenario with a static number of reduced channels, no weirs
+#   dynamic_current_climate: Adaptive bahaviour scanario with current climate conditions
+#   dynamic_dry_future: Adaptive bahaviour scenario with dry climate conditions
+#   dynamic_wet_future: Adaptive bahaviour scenario with wet climate conditions
+#   static_current_climate: Static scanario with current climate conditions
+#   static_dry_future: Static scenario with dry climate conditions
+#   static_wet_future: Static scenario with wet climate conditions
+
 
 if scenario is None:
     config = {
@@ -103,4 +114,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
