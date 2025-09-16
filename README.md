@@ -17,17 +17,16 @@ The UPWAS ABM couples the [WALRUS hydrological model](walrus_abm_version.py) wit
 ## 📁 Repository Structure
 
 ```
-├── upwas_model.py                      # Main ABM model implementation
-├── upwas_agents.py                     # Farmer agent definitions
-├── upwas_scenarios.py                  # Scenario configurations
-├── walrus_abm_version.py              # WALRUS hydrological model integration
-├── upwas_run.py                       # Single scenario execution
-├── requirements.txt                   # Python dependencies
-├── HPC_DEPLOYMENT_GUIDE.md           # HPC deployment instructions
-├── data/                             # Input data directory
-│   ├── climate/                      # Climate forcing data
-│   └── dem/                         # Digital elevation models
-└── output/                          # Model outputs
+├── upwas_model.py               # Main ABM model implementation
+├── upwas_agents.py              # Farmer agent definitions
+├── upwas_scenarios.py           # Scenario configurations
+├── walrus_abm_version.py        # WALRUS hydrological model integration
+├── upwas_run.py                 # Single scenario execution
+├── requirements.txt             # Python dependencies
+├── data/                        # Input data directory
+│   ├── climate/                 # Climate forcing data
+│   └── dem/                     # Digital elevation models
+└── output/                      # Model outputs
 ```
 **Available scenarios:**
 - `validation`: Validation run
@@ -40,20 +39,3 @@ The UPWAS ABM couples the [WALRUS hydrological model](walrus_abm_version.py) wit
 - `static_dry_future`: Static scenario with dry climate conditions
 - `static_wet_future`: Static scenario with wet climate conditions
 
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/upwas-abm.git
-   cd upwas-abm
-   ```
-
-2. **Set up environment using conda (recommended):**
-   ```bash
-   conda env create -f environment.yml
-   conda activate upwas-abm
-   ```
-
-   **Or using pip:**
-   ```bash
-   pip install -r requirements.txt
