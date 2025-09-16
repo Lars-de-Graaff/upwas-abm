@@ -1,5 +1,5 @@
-historic = {
-    "scenario_name": "historic",
+validation = {
+    "scenario_name": "validation",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
@@ -17,8 +17,8 @@ historic = {
     "no_channel": False
 }
 
-proactive = {
-    "scenario_name": "proactive",
+dynamic_current_climate = {
+    "scenario_name": "dynamic_current_climate",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
@@ -36,8 +36,8 @@ proactive = {
     "no_channel": False
 }
 
-future_dry = {
-    "scenario_name": "future_dry",
+dynamic_dry_future = {
+    "scenario_name": "dynamic_dry_future",
     "climate" : "2050_hd_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -55,8 +55,8 @@ future_dry = {
     "no_channel": False
 }
 
-future_wet = {
-    "scenario_name": "future_wet",
+dynamic_wet_future = {
+    "scenario_name": "dynamic_wet_future",
     "climate" : "2050_hn_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -74,8 +74,8 @@ future_wet = {
     "no_channel": False
 }
 
-reference_2010_2024 = {
-    "scenario_name": "reference_2010_2024",
+static_current_climate = {
+    "scenario_name": "static_current_climate",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
@@ -93,8 +93,8 @@ reference_2010_2024 = {
     "no_channel": False
 }
 
-reference_2050_dry = {
-    "scenario_name": "reference_2050_dry",
+static_dry_future = {
+    "scenario_name": "static_dry_future",
     "climate" : "2050_hd_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -112,8 +112,8 @@ reference_2050_dry = {
     "no_channel": False
 }
 
-reference_2050_wet = {
-    "scenario_name": "reference_2050_wet",
+static_wet_future = {
+    "scenario_name": "static_wet_future",
     "climate" : "2050_hn_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -131,8 +131,8 @@ reference_2050_wet = {
     "no_channel": False
 }
 
-fixed_weirs = {
-    "scenario_name": "fixed_weirs",
+measure_only_weirs = {
+    "scenario_name": "measure_only_weirs",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
@@ -150,8 +150,8 @@ fixed_weirs = {
     "no_channel": True
 }
 
-fixed_reduced_channels = {
-    "scenario_name": "fixed_reduced_channels",
+measure_only_reduced_channels = {
+    "scenario_name": "measure_only_reduced_channels",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
