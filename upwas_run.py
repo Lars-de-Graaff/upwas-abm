@@ -7,25 +7,25 @@ import os
 import upwas_model as upwas
 import upwas_scenarios
 
-scenario = None # upwas_scenarios.{scenario_name} # scenarios: 
+
+# select scenario to run or set to None to define own test configuration below
 # avalable scenarios:
 #   validation: Validation run
-#   measure_only_weirs: scenario with a static number of weirs installed, no reduced channels
-#   measure_only_reduced_channels: scenario with a static number of reduced channels, no weirs
-#   dynamic_current_climate: Adaptive bahaviour scanario with current climate conditions
-#   dynamic_dry_future: Adaptive bahaviour scenario with dry climate conditions
-#   dynamic_wet_future: Adaptive bahaviour scenario with wet climate conditions
-#   static_current_climate: Static scanario with current climate conditions
-#   static_dry_future: Static scenario with dry climate conditions
-#   static_wet_future: Static scenario with wet climate conditions
-
+#   CurClim_FixAdaptWeir: scenario with a static number of weirs installed, no reduced channels
+#   CurClim_FixAdaptChannel: scenario with a static number of reduced channels, no weirs
+#   CurClim_DynAdapt: Adaptive bahaviour scanario with current climate conditions
+#   DryClim_DynAdapt: Adaptive bahaviour scenario with dry climate conditions
+#   WetClim_DynAdapt: Adaptive bahaviour scenario with wet climate conditions
+#   CurClim_NoAdapt: Static scanario with current climate conditions
+#   DryClim_NoAdapt: Static scenario with dry climate conditions
+#   WetClim_NoAdapt: Static scenario with wet climate conditions
+scenario =  None #upwas_scenarios.scenario_name #e.g., upwas_scenarios.CurClim_DynAdapt 
 
 if scenario is None:
     config = {
-        "total_runs": 1,
         "scenario_name": "test_run",
-        "model": "upwas_fixed_reduced_channels",#"upwas_standard",  # Default model, can be changed to "upwas_fixed_reduced_channels"
         "climate" : "2010-2024",
+        "total_runs": 1,
         "start_date": 20100101,
         "end_date": 20150101,
         "cell_size": 800,
@@ -37,7 +37,8 @@ if scenario is None:
         "intention2adapt" : 45,
         "implement_measure_on": True,
         "initial_weir" : 0.01,
-        "fixed_reduced_channels": None
+        "fixed_reduced_channels": None,
+        "no_channel": False
     }
 else:
     config = scenario
@@ -114,5 +115,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 

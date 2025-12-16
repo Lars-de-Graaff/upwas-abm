@@ -17,8 +17,8 @@ validation = {
     "no_channel": False
 }
 
-dynamic_current_climate = {
-    "scenario_name": "dynamic_current_climate",
+CurClim_DynAdapt = {
+    "scenario_name": "CurClim_DynAdapt",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
@@ -36,8 +36,8 @@ dynamic_current_climate = {
     "no_channel": False
 }
 
-dynamic_dry_future = {
-    "scenario_name": "dynamic_dry_future",
+DryClim_DynAdapt = {
+    "scenario_name": "DryClim_DynAdapt",
     "climate" : "2050_hd_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -55,8 +55,8 @@ dynamic_dry_future = {
     "no_channel": False
 }
 
-dynamic_wet_future = {
-    "scenario_name": "dynamic_wet_future",
+WetClim_DynAdapt = {
+    "scenario_name": "WetClim_DynAdapt",
     "climate" : "2050_hn_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -74,8 +74,8 @@ dynamic_wet_future = {
     "no_channel": False
 }
 
-static_current_climate = {
-    "scenario_name": "static_current_climate",
+CurClim_NoAdapt = {
+    "scenario_name": "CurClim_NoAdapt",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
@@ -93,8 +93,8 @@ static_current_climate = {
     "no_channel": False
 }
 
-static_dry_future = {
-    "scenario_name": "static_dry_future",
+DryClim_NoAdapt = {
+    "scenario_name": "DryClim_NoAdapt",
     "climate" : "2050_hd_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -112,8 +112,8 @@ static_dry_future = {
     "no_channel": False
 }
 
-static_wet_future = {
-    "scenario_name": "static_wet_future",
+WetClim_NoAdapt = {
+    "scenario_name": "WetClim_NoAdapt",
     "climate" : "2050_hn_ens1",
     "total_runs": 40,
     "start_date": 20500101,
@@ -131,8 +131,8 @@ static_wet_future = {
     "no_channel": False
 }
 
-measure_only_weirs = {
-    "scenario_name": "measure_only_weirs",
+CurClim_FixAdaptWeir = {
+    "scenario_name": "CurClim_FixAdaptWeir",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,
@@ -150,8 +150,8 @@ measure_only_weirs = {
     "no_channel": True
 }
 
-measure_only_reduced_channels = {
-    "scenario_name": "measure_only_reduced_channels",
+CurClim_FixAdaptChannel = {
+    "scenario_name": "CurClim_FixAdaptChannel",
     "climate" : "2010-2024",
     "total_runs": 40,
     "start_date": 20100101,

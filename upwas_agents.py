@@ -117,7 +117,7 @@ class Farmer(Agent):
             self.soil_pars['cS'] = self.soil_pars['cD']/300
             self.hSmin = 0.5 * self.soil_pars["cD"] # set the weir level to the new channel depth
         
-        self.k = np.random.uniform(0.5e3, 1.5e3) # Hydrological connectivity 
+        self.kD = np.random.uniform(0.5e3, 1.5e3) # Hydrological connectivity 
         self.hSmin = 0
         self.inflow_surface = 0
         self.inflow_ground = 0 
@@ -153,9 +153,9 @@ class Farmer(Agent):
 
 ################# Step function #################
     def sociohydrology(self):
-        if self.date.month == 12 and self.date.day == 15:
+        if self.date.month == 12 and self.date.day == 15: # once a year, update PMT components and adaptation intentions
             self.update_pmt()
-            if self.implement_measure_on == True:
+            if self.implement_measure_on == True: # if adaptation measures are implemented in the scenario
                 self.implement_measure()
         self.update_hydrology()
         self.damage()
@@ -166,7 +166,7 @@ class Farmer(Agent):
         self.proceed_day_of_year()
 
 
-    def define_surroudings(self): #only for the first step
+    def define_surroudings(self): # only for the first step
         self.elevation = self.model.grid.properties['elevation'].data[self.pos]
         self.direct_neighbours = self.model.grid.get_neighbors(self.pos, moore=False, include_center=True, radius=1) 
         self.neighbourhood_neighbours = self.model.grid.get_neighbors(self.pos, moore=False, include_center=False, radius=self.neighbourhood_radius)
@@ -269,7 +269,7 @@ class Farmer(Agent):
 ################# implement measure (individually) #################
     def implement_measure(self):
         '''
-        This function implements the measures of the farmer agent. The farmer agent can choose to implement a weir or a channel depth reduction.
+        This function implements the measures of the farmer agent. The farmer agent can choose to implement an ajustable weir or to reduce the channel depth.
         '''
         if self.weir == 0 and self.perceived_cost == 0:
             likelihood_to_adapt_weir = ( 1 -  ( ( 1 - self.intention_to_adapt_weir ) ** ( 1 / self.intention2adapt ) ) ) 
@@ -387,14 +387,14 @@ class Farmer(Agent):
         sums_step = np.zeros(4)
         self.forc['fXG'] = self.inflow_ground
         
-        SOIL_PARS_ORDER = ["cW", "cV", "cG", "cQ", "dG0", "cD", "aS", "st", "cS", "b", "psi_ae", "theta_s", "aG"]
-        INPUT_WALRUS_ORDER = ["ETact", "Q", "fGS", "fQS", "dV", "dVeq", "dG", "hQ", "hS", "W", "dt_ok", "hSmin", "fXS", "fXG"]
+        SOIL_PARS_ORDER = ["cW", "cV", "cG", "cQ", "dG0", "cD", "aS", "st", "cS", "b", "psi_ae", "theta_s", "aG"] #soil parameters order for WALRUS
+        INPUT_WALRUS_ORDER = ["ETact", "Q", "fGS", "fQS", "dV", "dVeq", "dG", "hQ", "hS", "W", "dt_ok", "hSmin", "fXS", "fXG"] #input walrus order for WALRUS
 
         soil_pars_arr = np.array([self.soil_pars[key] for key in SOIL_PARS_ORDER], dtype=np.float64)
         input_walrus_arr = np.array([self.input_walrus[key] for key in INPUT_WALRUS_ORDER], dtype=np.float64)
         
-        # print(f"input_walrus_arr before while: {input_walrus_arr}")
-        while start_step < (self.output_date.loc[timestep, 'date']  - p_num["min_timestep"]):
+        # Loop over WALRUS time steps until the end of the current model timestep is reached
+        while start_step < (self.output_date.loc[timestep, 'date'] - p_num["min_timestep"]): 
             P_t = self.func_P(end_step) - self.func_P(start_step)
             ETpot_t = self.func_ETpot(end_step) - self.func_ETpot(start_step)
             fXG_t = self.func_fXG(end_step) - self.func_fXG(start_step)
@@ -429,9 +429,9 @@ class Farmer(Agent):
             elevation = self.model.grid.properties["elevation"].data[self.pos]
             elevation_neighbour = self.model.grid.properties["elevation"].data[neighbour.pos]
             if self.gw_level + elevation < neighbour.gw_level + elevation_neighbour:
-                ground_discharge = self.k * (((neighbour.gw_level + elevation_neighbour ) - (self.gw_level + elevation))/(self.cell_size*1000)) #Darcy's Law (specific discharge: q = -K * dh/dl) 
-                neighbour.inflow_ground += ground_discharge
-                self.inflow_ground -= ground_discharge #outcome darcy
+                ground_discharge = self.kD * (((neighbour.gw_level + elevation_neighbour ) - (self.gw_level + elevation))/(self.cell_size*1000)) # calculate groundwater discharge based on difference in groundwater levels and elevation
+                neighbour.inflow_ground += ground_discharge # add groundwater inflow to neighbour
+                self.inflow_ground -= ground_discharge # subtract groundwater outflow from self
         
  
 ################# store variables and day of the year #################
