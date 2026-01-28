@@ -30,14 +30,14 @@ The ABM couples the [WALRUS hydrological model](walrus_abm_version.py) with farm
 ```
 **Available scenarios:**
 - `validation`: Validation run
-- `measure_only_weirs`: scenario with a static number of weirs installed, no reduced channels
-- `measure_only_reduced_channels`: scenario with a static number of reduced channels, no weirs
-- `dynamic_current_climate`: Adaptive bahaviour scanario with current climate conditions
-- `dynamic_dry_future`: Adaptive bahaviour scenario with dry climate conditions
-- `dynamic_wet_future`: Adaptive bahaviour scenario with wet climate conditions
-- `static_current_climate`: Static scanario with current climate conditions
-- `static_dry_future`: Static scenario with dry climate conditions
-- `static_wet_future`: Static scenario with wet climate conditions
+- `CurClim_FixAdaptWeir`: scenario with a fixed number of weirs installed, no reduced channels
+- `CurClim_FixAdaptChannel`: scenario with a fixed number of reduced channels, no weirs
+- `CurClim_DynAdapt`: Dynamic Adaptation scanario with current climate conditions
+- `DryClim_DynAdapt`: Dynamic Adaptation scenario with dry climate conditions
+- `WetClim_DynAdapt`: Dynamic Adaptation scenario with wet climate conditions
+- `CurClim_NoAdapt`: No adaptation scanario with current climate conditions
+- `DryClim_NoAdapt`: No adaptation scenario with dry climate conditions
+- `WetClim_NoAdapt`: No adaptation scenario with wet climate conditions
 
 ### Funding
 This research is part of the project ‘Upscaling private and collective water storage for robust agricultural systems: Potentials, possibilities and challenges’ (UPWAS; project number KICH1.LWV02.20.006) of the research programme ‘Climate-robust production systems and water management’ (KIC) which is financed by the Dutch Research Council (NWO).
