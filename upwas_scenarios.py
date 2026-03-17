@@ -169,6 +169,63 @@ CurClim_FixAdaptChannel = {
     "no_channel": False
 }
 
+CurClim_MaxAdapt = {
+    "scenario_name": "CurClim_MaxAdapt",
+    "climate" : "2010-2024",
+    "total_runs": 40,
+    "start_date": 20100101,
+    "end_date": 20250101,
+    "cell_size": 800,
+    "grid_width": 20,
+    "grid_height": 20,
+    "base_seed": 186,
+    "alpha": 0.6,
+    "gamma": 0.5,
+    "intention2adapt" : 45,
+    "implement_measure_on": False,
+    "initial_weir" : 1,
+    "fixed_reduced_channels": 1,
+    "no_channel": False
+}
+
+DryClim_MaxAdapt = {
+    "scenario_name": "DryClim_MaxAdapt",
+    "climate" : "2050_hd_ens1",
+    "total_runs": 40,
+    "start_date": 20500101,
+    "end_date": 20650101,
+    "cell_size": 800,
+    "grid_width": 20,
+    "grid_height": 20,
+    "base_seed": 186,
+    "alpha": 0.6,
+    "gamma": 0.5,
+    "intention2adapt" : 45,
+    "implement_measure_on": False,
+    "initial_weir" : 1,
+    "fixed_reduced_channels": 1,
+    "no_channel": False
+}
+
+WetClim_MaxAdapt = {
+    "scenario_name": "WetClim_MaxAdapt",
+    "climate" : "2050_hn_ens1",
+    "total_runs": 40,
+    "start_date": 20500101,
+    "end_date": 20650101,
+    "cell_size": 800,
+    "grid_width": 20,
+    "grid_height": 20,
+    "base_seed": 186,
+    "alpha": 0.6,
+    "gamma": 0.5,
+    "intention2adapt" : 45,
+    "implement_measure_on": False,
+    "initial_weir" : 1,
+    "fixed_reduced_channels": 1,
+    "no_channel": False
+}
+
 test_fast = {
     "scenario_name": "test_fast",
     "climate" : "2010-2024",
