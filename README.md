@@ -38,6 +38,9 @@ The ABM couples the [WALRUS hydrological model](walrus_abm_version.py) with farm
 - `CurClim_NoAdapt`: No adaptation scanario with current climate conditions
 - `DryClim_NoAdapt`: No adaptation scenario with dry climate conditions
 - `WetClim_NoAdapt`: No adaptation scenario with wet climate conditions
+- `CurClim_MaxAdapt`: Maximum adaptation scanario with current climate conditions
+- `DryClim_MaxAdapt`: Maximum adaptation scenario with dry climate conditions
+- `WetClim_MaxAdapt`: Maximum adaptation scenario with wet climate conditions
 
 ### Funding
 This research is part of the project ‘Upscaling private and collective water storage for robust agricultural systems: Potentials, possibilities and challenges’ (UPWAS; project number KICH1.LWV02.20.006) of the research programme ‘Climate-robust production systems and water management’ (KIC) which is financed by the Dutch Research Council (NWO).
