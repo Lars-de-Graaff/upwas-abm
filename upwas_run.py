@@ -19,6 +19,9 @@ import upwas_scenarios
 #   CurClim_NoAdapt: Static scanario with current climate conditions
 #   DryClim_NoAdapt: Static scenario with dry climate conditions
 #   WetClim_NoAdapt: Static scenario with wet climate conditions
+#   CurClim_MaxAdapt: Static scanario with current climate conditions and maximum adaptation
+#   DryClim_MaxAdapt: Static scenario with dry climate conditions and maximum adaptation
+#   WetClim_MaxAdapt: Static scenario with wet climate conditions and maximum adaptation
 scenario =  None #upwas_scenarios.scenario_name #e.g., upwas_scenarios.CurClim_DynAdapt 
 
 if scenario is None:
